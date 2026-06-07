@@ -61,7 +61,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
   }
 
   return (
-    <div className="min-h-full bg-appbg pb-6 relative">
+    <div className="min-h-full bg-appbg dark:bg-slate-900 pb-6 relative">
       {/* Decorative background question marks */}
       <div className="absolute top-10 -left-4 text-primary/5 -rotate-12 pointer-events-none">
         <span className="text-8xl font-bold">?</span>
@@ -70,7 +70,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
         <span className="text-6xl font-bold">?</span>
       </div>
 
-      <div className="px-6 pt-12 pb-6">
+      <div className="px-6 pt-8 pb-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center space-x-3">
@@ -85,13 +85,13 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
               />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-800 leading-tight">
+              <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 leading-tight">
                 Hi, {displayName}
               </h1>
-              <p className="text-sm text-slate-500 font-medium">Ready to play</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Ready to play</p>
             </div>
           </div>
-          <div className="flex items-center space-x-1.5 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-100">
+          <div className="flex items-center space-x-1.5 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm border border-gray-100 dark:border-slate-700">
             <Gem className="w-4 h-4 text-pink-400 fill-pink-100" />
             <span className="text-sm font-bold text-primary">{profile?.points ?? 0}</span>
           </div>
@@ -106,7 +106,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="block w-full pl-11 pr-4 py-3.5 bg-white border-0 rounded-2xl text-slate-800 placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none transition-shadow text-sm font-medium"
+            className="block w-full pl-11 pr-4 py-3.5 bg-white dark:bg-slate-800 border-0 rounded-2xl text-slate-800 dark:text-slate-100 placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none transition-shadow text-sm font-medium"
             placeholder="Search for a quiz"
           />
         </div>
@@ -121,7 +121,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
                 <button
                   key={quiz.id}
                   onClick={() => handleStartQuiz(quiz)}
-                  className="w-full bg-white p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50 hover:shadow-md transition-shadow active:scale-[0.98]"
+                  className="w-full bg-white dark:bg-slate-800 p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50 dark:border-slate-700 hover:shadow-md transition-shadow active:scale-[0.98]"
                 >
                   <div>
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-md ${quiz.category?.color ?? 'bg-pink-100'} text-primary`}>
@@ -160,7 +160,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
             {categories.length > 0 && (
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-slate-800">Categories</h3>
+                  <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">Categories</h3>
                   <button
                     onClick={() => router.push('/quizzes')}
                     className="text-sm font-bold text-primary hover:text-primaryHover"
@@ -188,12 +188,12 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
             {/* Recent Attempts */}
             {recentAttempts.length > 0 && (
               <div>
-                <h3 className="text-lg font-bold text-slate-800 mb-4">Recent</h3>
+                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Recent</h3>
                 <div className="space-y-3">
                   {recentAttempts.map((attempt) => (
                     <div
                       key={attempt.id}
-                      className="bg-white p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50"
+                      className="bg-white dark:bg-slate-800 p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-50 dark:border-slate-700"
                     >
                       <div className="flex items-center space-x-4">
                         <div
@@ -202,7 +202,7 @@ export default function HomeClient({ profile, categories, quizzes, recentAttempt
                           {(attempt as any).quiz?.category?.icon ?? '📚'}
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-800 text-sm">{(attempt as any).quiz?.title}</h4>
+                          <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm">{(attempt as any).quiz?.title}</h4>
                           <p className="text-xs text-slate-500 font-medium mt-0.5">
                             {attempt.total_questions ?? 0} questions
                           </p>

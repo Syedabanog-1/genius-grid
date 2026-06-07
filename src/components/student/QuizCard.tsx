@@ -27,10 +27,10 @@ export default function QuizCard({ quiz, retakeCount = 0, locked = false, onStar
   return (
     <div
       onClick={locked ? undefined : onStart}
-      className={`bg-white p-5 rounded-3xl shadow-sm border transition-shadow relative overflow-hidden ${
+      className={`bg-white dark:bg-slate-800 p-5 rounded-3xl shadow-sm border transition-shadow relative overflow-hidden ${
         locked
-          ? 'border-gray-100 opacity-60 cursor-not-allowed'
-          : 'border-gray-50 cursor-pointer hover:shadow-md active:scale-[0.98]'
+          ? 'border-gray-100 dark:border-slate-700 opacity-60 cursor-not-allowed'
+          : 'border-gray-50 dark:border-slate-700 cursor-pointer hover:shadow-md active:scale-[0.98]'
       }`}
     >
       {/* Locked overlay label */}
@@ -46,7 +46,7 @@ export default function QuizCard({ quiz, retakeCount = 0, locked = false, onStar
           <span className={`text-xs font-bold px-2.5 py-1 rounded-md ${catColor} text-primary mb-2 inline-block`}>
             {quiz.category?.name ?? 'General'}
           </span>
-          <h3 className="font-bold text-slate-800 text-lg leading-tight">{quiz.title}</h3>
+          <h3 className="font-bold text-slate-800 dark:text-slate-100 text-lg leading-tight">{quiz.title}</h3>
         </div>
         {!locked && (
           <span className={`text-xs font-bold px-2 py-1 rounded-lg flex-shrink-0 ${difficultyStyles[diff]}`}>
@@ -55,13 +55,10 @@ export default function QuizCard({ quiz, retakeCount = 0, locked = false, onStar
         )}
       </div>
 
-      <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 font-medium">
+      <div className="flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-400 font-medium">
         <div className="flex items-center">
           <FileText className="w-4 h-4 mr-1.5 flex-shrink-0" />
           {perAttempt} Qs
-          {quiz.questions_per_attempt > 0 && poolSize > perAttempt && (
-            <span className="ml-1 text-slate-400">of {poolSize}</span>
-          )}
         </div>
         <div className="flex items-center">
           <Clock className="w-4 h-4 mr-1.5 flex-shrink-0" />

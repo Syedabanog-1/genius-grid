@@ -72,7 +72,7 @@ export default function LeaderboardClient({ users, currentUserId, currentUserRan
   return (
     <div className="min-h-full bg-appbg flex flex-col">
       {/* Header */}
-      <div className="px-6 pt-12 pb-6 flex items-center justify-between bg-primary text-white rounded-b-[2.5rem] shadow-soft relative z-10">
+      <div className="px-6 pt-8 pb-6 flex items-center justify-between bg-primary text-white rounded-b-[2.5rem] shadow-soft relative z-10">
         <button
           onClick={() => router.back()}
           className="p-2 -ml-2 rounded-full hover:bg-white/10 transition-colors"

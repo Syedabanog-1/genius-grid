@@ -73,7 +73,7 @@ export default function QuizzesClient({ categories, quizzes, userId, initialCate
   return (
     <div className="min-h-screen bg-appbg pb-6">
       {/* Header */}
-      <div className="px-6 pt-12 pb-4 flex items-center bg-white sticky top-0 z-20 shadow-sm">
+      <div className="px-6 pt-8 pb-4 flex items-center bg-white sticky top-0 z-20 shadow-sm">
         <button
           onClick={() => router.back()}
           className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors"

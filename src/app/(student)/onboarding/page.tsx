@@ -42,7 +42,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-appbg px-8 py-12 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-appbg dark:bg-slate-900 px-8 py-12 relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-16 left-8 text-primary/10 rotate-12 pointer-events-none select-none">
         <span className="text-6xl font-bold">?</span>
@@ -58,6 +58,16 @@ export default function OnboardingPage() {
       >
         Skip
       </button>
+
+      {/* Brand */}
+      <div className="absolute top-8 left-0 right-0 flex justify-center z-10">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-soft">
+            <span className="text-white font-bold text-xs">GG</span>
+          </div>
+          <span className="font-bold text-slate-800 dark:text-slate-100 text-lg tracking-tight">Genius Grid</span>
+        </div>
+      </div>
 
       {/* Centered content block */}
       <div className="w-full max-w-sm z-10 flex flex-col items-center">
@@ -76,10 +86,10 @@ export default function OnboardingPage() {
             >
               {createElement(slides[currentSlide].icon, { className: 'w-16 h-16' })}
             </div>
-            <h1 className="text-3xl font-bold text-slate-800 mb-3">
+            <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-3">
               {slides[currentSlide].title}
             </h1>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
               {slides[currentSlide].description}
             </p>
           </motion.div>

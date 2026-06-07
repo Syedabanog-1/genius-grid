@@ -49,7 +49,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-appbg px-6 py-12 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-appbg dark:bg-slate-900 px-6 py-12 relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 -left-24 w-56 h-56 bg-pink-300/10 rounded-full blur-2xl pointer-events-none" />
@@ -58,8 +58,8 @@ export default function LoginPage() {
       <div className="w-full max-w-sm z-10">
         <div className="mb-8">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Genius Grid</p>
-          <h1 className="text-4xl font-bold text-slate-800 mb-2">Welcome Back!</h1>
-          <p className="text-slate-500 text-lg">Sign in to continue your learning journey.</p>
+          <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-2">Welcome Back!</h1>
+          <p className="text-slate-500 dark:text-slate-400 text-lg">Sign in to continue your learning journey.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -72,7 +72,7 @@ export default function LoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block w-full pl-12 pr-4 py-4 bg-white border-0 rounded-2xl text-slate-800 placeholder-gray-400 shadow-sm focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+              className="block w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-0 rounded-2xl text-slate-800 dark:text-slate-100 placeholder-gray-400 shadow-sm focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
               placeholder="Email Address"
             />
           </div>
@@ -86,7 +86,7 @@ export default function LoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block w-full pl-12 pr-12 py-4 bg-white border-0 rounded-2xl text-slate-800 placeholder-gray-400 shadow-sm focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+              className="block w-full pl-12 pr-12 py-4 bg-white dark:bg-slate-800 border-0 rounded-2xl text-slate-800 dark:text-slate-100 placeholder-gray-400 shadow-sm focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
               placeholder="Password"
             />
             <button
